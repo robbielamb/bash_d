@@ -1,0 +1,1 @@
+export PATH="/opt/local/lib/postgresql84/bin:$PATH"
