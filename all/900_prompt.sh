@@ -26,12 +26,12 @@ function parse_git_branch {
 }
 
 function parse_ruby_version() {
-  ruby_version="$(echo $rvm_ruby_string | awk -F'-' '{printf "%s-%s\n", $1, $2}')"
-  if [[ -n $rvm_gemset_name ]]
-    then
-    ruby_version="${ruby_version}@${rvm_gemset_name}"
-  fi
-  echo "${RED}[${COLOR_NONE}$ruby_version${RED}]${COLOR_NONE}"
+  # ruby_version="$(echo $rvm_ruby_string | awk -F'-' '{printf "%s-%s\n", $1, $2}')"
+  # if [[ -n $rvm_gemset_name ]]
+  #   then
+  #   ruby_version="${ruby_version}@${rvm_gemset_name}"
+  # fi
+  echo "${RED}[${COLOR_NONE}$(rvm-prompt i v g)${RED}]${COLOR_NONE}"
 }
 
 function prompt_func() {
